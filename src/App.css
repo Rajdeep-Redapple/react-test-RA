@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+#root {
+  background-image: linear-gradient(180deg, #581845, #900C3F, #C70039, #FF5733, #FFC300);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +39,51 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.h-100vh{
+  height: 100vh;
+}
+
+.card, .card-header, .formInput{
+  background: transparent !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.formInput::placeholder{
+  color: #adadad !important;
+}
+
+.formBtn{
+  background: transparent !important;
+  border-color: #fff !important;
+  transition: 0.7s all;
+}
+
+.formBtn:hover{
+  background: #fff !important;
+  border-color: #fff !important;
+  color: #000 !important;
+}
+
+.login-head{
+  color: #fff;
+  font-family: monospace;
+  font-weight: 900;
+  letter-spacing: 3px;
+  border-left: 15px solid #fff;
+  padding-left: 25px;
+}
+
+.login-subhead{
+  color: #fff;
+  font-family: sans-serif;
+  /* font-weight: 900; */
+  letter-spacing: 3px;
+  /* border-left: 15px solid #fff;
+  padding-left: 25px; */
+  /* text-decoration: underline; */
+  text-align: center;
+  display: none;
 }
