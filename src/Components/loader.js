@@ -1,23 +1,20 @@
 import React from 'react';
 import '../App.css';
-import Lottie from 'react-lottie';
-import animationData from '../../public/loader.json';
+import Lottie from "lottie-react";
+import animationData from './loader.json';
 
-const Loader = () => {
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-    };
+const Loader = ({visible}) => {
+    // const defaultOptions = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: animationData,
+    //     rendererSettings: {
+    //         preserveAspectRatio: 'xMidYMid slice',
+    //     },
+    // };
+    const classes = (visible) ? 'loader d-block' : 'loader d-none';
     return (
-        <Lottie
-            options={defaultOptions}
-            height={300}
-            width={300}
-        />
+        <Lottie animationData={animationData} loop={true} className={classes}/>
     )
 }
 
