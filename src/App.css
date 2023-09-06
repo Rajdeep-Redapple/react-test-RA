@@ -3,8 +3,8 @@
 }
 
 #root {
-  /* background-image: linear-gradient(180deg, #581845, #900C3F, #C70039, #FF5733, #FFC300); */
-  background-image: linear-gradient(180deg, #0035ff, #0c5390, #0074c7, #33ceff, #1b00ff3b);
+  background-image: linear-gradient(180deg, #581845, #900C3F, #C70039, #FF5733, #FFC300);
+  /* background-image: linear-gradient(180deg, #0035ff, #0c5390, #0074c7, #33ceff, #1b00ff3b); */
 }
 
 .App-logo {
@@ -99,6 +99,6 @@
 }
 
 a {
-  color: #6b2bcb !important;
+  color: #ffffff !important;
 }
 

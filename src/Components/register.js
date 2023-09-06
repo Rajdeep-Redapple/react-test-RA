@@ -5,8 +5,10 @@ import * as bs from 'react-bootstrap';
 import Loader from './loader';
 import Messagebox from './message-div';
 import { ReactDOM } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 function RegisterPage(){
+
+    const navigate = useNavigate();
 
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
@@ -26,8 +28,8 @@ function RegisterPage(){
             setLoader(false);
             return false;
         }
-
-        await fetch('http://localhost:3009/api/v1/register-user', {
+        const api_url = process.env.REACT_APP_API_BASE_URL;
+        await fetch(`${api_url}register-user`, {
         method: 'POST',
         body: JSON.stringify({
             name : name,
@@ -44,6 +46,7 @@ function RegisterPage(){
             console.log(data.err);
             if(!data.err){
                 setMessage(data.message);
+                navigate('/', { replace: true });
             }
             else{
                 setMessage(data.message);

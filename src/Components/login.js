@@ -5,9 +5,11 @@ import * as bs from 'react-bootstrap';
 import Loader from './loader';
 import Messagebox from './message-div';
 import { ReactDOM } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LoginPage(){
+
+    const navigate = useNavigate();
 
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
@@ -19,7 +21,9 @@ function LoginPage(){
         setLoader(true);
         e.preventDefault();
 
-        await fetch('http://localhost:3009/api/v1/login', {
+        const api_url = process.env.REACT_APP_API_BASE_URL;
+
+        await fetch(`${api_url}login`, {
         method: 'POST',
         body: JSON.stringify({
             email : email,
@@ -34,6 +38,7 @@ function LoginPage(){
             console.log(data.err);
             if(!data.err){
                 setMessage(data.message);
+                navigate('/dashboard', { replace: true });
             }
             else{
                 setMessage(data.message);
